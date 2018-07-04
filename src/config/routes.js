@@ -1,7 +1,7 @@
 const express = require('express')
 
 module.exports = function(server) {
-    const api = exporess.Router()
+    const api = express.Router()
 
     server.use('/', api)
 
