@@ -8,4 +8,8 @@ module.exports = function(server) {
     server.get('/', function(req, res) {
         res.send('Hello World!')
     })
+
+    server.get('/leonardo/', function(req, res) {
+        res.send('Leonardo Salema')
+    })
 }
