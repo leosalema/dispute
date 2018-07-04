@@ -2,12 +2,13 @@
 // require ('./config/routes')(server)
 
 const express = require('express')
-const server = express()
+const app = express()
 
-server.get('/', function(req, res) {
-    res.send('Hello World!')
+app.get('/', function(req, res) {
+    res.send(process.env.MESSAGE || 'Default Message')
 })
-const port = 5000
-server.listen(port, function() {
-    console.log(`BACKEND running on port ${port}`)
+
+var port = Number(process.env.PORT || 5000)
+app.listen(port, function() {
+    console.log(`Listening on ${port}`)
 })
