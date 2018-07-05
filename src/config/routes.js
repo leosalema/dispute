@@ -1,15 +1,20 @@
 const express = require('express')
+const trailAdm = require('../api/administrator/trail')
 
 module.exports = function(server) {
     const api = express.Router()
 
-    server.use('/', api)
+    server.use('/api', api)
 
-    server.get('/', function(req, res) {
-        res.send('Hello World!')
+    server.get('/api/administrator/trail/', function(req, res) {
+        trailAdm.get(res)
     })
 
-    server.get('/leonardo/', function(req, res) {
-        res.send('Leonardo Salema')
+    server.post('/api/administrator/trail/', function(req, res) {
+        trailAdm.create(req.body, res)
+    })
+
+    server.put('/api/administrator/trail/', function(req, res) {
+        trailAdm.update(req.body, res)
     })
 }
