@@ -1,9 +1,9 @@
 const connection = require('../../config/database')
 
-function trailAdm() {
-    this.get = function(res) {
+function stageAdm() {
+    this.get = function(id, res) {
         connection.acquire(function(err, con) {
-            con.query("SELECT * FROM TBTrail ORDER BY DFOrder_TBTrail", function(err, result) {
+            con.query("SELECT * FROM TBStage WHERE FkId_Trail_TBStage = ?", [id], function(err, result) {
                 con.release()
                 res.send(result)
             })
@@ -11,4 +11,4 @@ function trailAdm() {
     }
 }
 
-module.exports = new trailAdm()
+module.exports = new stageAdm()
