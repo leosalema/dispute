@@ -1,8 +1,8 @@
 const express = require('express')
-const TrailAdm = require('../api/administrator/Trail')
-const StageAdm = require('../api/administrator/Stage')
-const QuestionAdm = require('../api/administrator/Question')
-const OptionAdm = require('../api/administrator/Option')
+// const TrailAdm = require('../api/administrator/Trail')
+// const StageAdm = require('../api/administrator/Stage')
+// const QuestionAdm = require('../api/administrator/Question')
+// const OptionAdm = require('../api/administrator/Option')
 
 module.exports = function(server) {
     const api = express.Router()
