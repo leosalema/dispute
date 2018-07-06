@@ -9,6 +9,10 @@ module.exports = function(server) {
 
     server.use('/api', api)
 
+    server.get('/', function(req, res) {
+        res.send('Disputing')
+    })
+
     server.get('/api/', function(req, res) {
         res.send('Hello World!')
     })
