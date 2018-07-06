@@ -4,7 +4,7 @@ function option(){
     
     this.get = function(id, res) {
         connection.acquire(function(err, con) {
-            con.query("SELECT * FROM TBOption WHERE FkId_Question_TBOption = ", [id], function(err, result) {
+            con.query("SELECT * FROM TBOption WHERE FkId_Question_TBOption = ?", [id], function(err, result) {
                 con.release()
                 res.send(result)
             })
@@ -20,7 +20,7 @@ function option(){
         })
     }
 
-    this.post = function(option, res) {
+    this.create = function(option, res) {
         connection.acquire(function(err, con) {
             con.query("INSERT INTO TBOption SET ?", option, function(err, result) {
                 con.release()
@@ -32,7 +32,7 @@ function option(){
         })
     }
 
-    this.put = function(option, res) {
+    this.update = function(option, res) {
         connection.acquire(function(err, con) {
             con.query("UPDATE TBOption SET ? WHERE PkId_TBOption = ?", [option, option.PkId_TBOption], function(err, result) {
                 con.release()
