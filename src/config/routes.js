@@ -21,7 +21,7 @@ module.exports = function(server) {
         TrailAdm.get(res)
     })
 
-    server.get('/api/administrator/trail/:id/edit/', function(req, res) {
+    server.get('/api/administrator/trail/:id', function(req, res) {
         TrailAdm.getEdit(req.params.id, res)
     })
 
