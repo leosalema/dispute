@@ -13,9 +13,9 @@ module.exports = function(server) {
         res.send('Disputing')
     })
 
-    // server.get('/api/', function(req, res) {
-    //     res.send('Hello World!')
-    // })
+    server.get('/api/', function(req, res) {
+        res.send('Hello World!')
+    })
 
     // server.get('/api/administrator/trail/', function(req, res) {
     //     TrailAdm.get(res)
