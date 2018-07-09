@@ -3,6 +3,7 @@ const TrailAdm = require('../api/administrator/Trail')
 const StageAdm = require('../api/administrator/Stage')
 const QuestionAdm = require('../api/administrator/Question')
 const OptionAdm = require('../api/administrator/Option')
+const Dashboard = require('../api/administrator/Dashboard')
 
 module.exports = function(server) {
     const api = express.Router()
@@ -15,6 +16,10 @@ module.exports = function(server) {
 
     server.get('/api/', function(req, res) {
         res.send('Hello World!')
+    })
+
+    server.get('/api/administrator/dashboard/', function(req, res) {
+        Dashboard.get(res)
     })
 
     server.get('/api/administrator/trail/', function(req, res) {
